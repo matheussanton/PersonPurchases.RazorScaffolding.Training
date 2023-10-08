@@ -1,0 +1,49 @@
+@page
+@model RazorScaffolding.Training.Pages_Purchase.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Purchase</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.Establishment)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.Establishment)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.PurchasedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.PurchasedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.Amount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Purchase.Amount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Purchase.Person)
+        </dt>
+        <dd class="col-sm-10">
+                @(Model.Purchase.Person != null ? $"{Model.Purchase.Person.Name} ({Model.Purchase.Person.Email})" : "")
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Purchase?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
